@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Júlia & João - Convite de Casamento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="convite-premium">
+    <div class="moldura-externa">
+        <div class="moldura-interna">
+            <div class="monograma-topo">
+                <span>J</span>
+                <div class="linha-nobre"></div>
+                <span>L</span>
+            </div>
+            
+            <p class="introducao">Com a bênção de Deus e de seus pais</p>
+            
+            <h1 class="nomes-principais">Júlia <br>& <br>Lucas </h1>
+            
+            <p class="chamada">Convidam para a celebração de seu casamento</p>
+            
+            <div class="divisor-dourado"></div>
+            
+            <div class="dados-evento">
+                <p class="data-extenso">Sábado, 28 de Março de 2026</p>
+                <p class="horario-extenso">Às 16:00 horas</p>
+    
+                <a href="https://www.google.com/maps/search/?api=1&query=Rua+Ipu+1890+Tabapua+Caucaia" 
+                    target="_blank" 
+                    class="endereco-discreto">
+                    Rua Ipu, 1890 – Tabapuá, Caucaia
+                </a>
+            </div>>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section id="rsvp" class="container reveal">
+        <div class="card-interativo shadow">
+            <h2 class="titulo-serif">Confirmar Presença</h2>
+            <p>Sua confirmação é essencial para nós.</p>
+            <form id="rsvp-form">
+                <input type="text" id="name" placeholder="Nome Completo" required>
+                <select id="attendance" required>
+                    <option value="" disabled selected>Você comparecerá?</option>
+                    <option value="Sim">Sim, estarei presente!</option>
+                    <option value="Não">Infelizmente não poderei ir</option>
+                </select>
+                <button type="submit" class="btn-nobre">Confirmar via WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="presentes" class="container reveal">
+    <h2 class="titulo-serif">Lista de Presentes</h2>
+    <p class="texto-apoio">Sua presença é o nosso maior presente, mas se desejar nos presentear, <br> preparamos algumas sugestões para o nosso novo lar e nossa lua de mel.</p>
+
+    <div class="grid-presentes">
+        <div class="card shadow card-presente">
+            <div class="categoria-tag">Lua de Mel</div>
+            <h3>Jantar Romântico</h3>
+            <p class="descricao">Uma noite especial para os noivos em um restaurante local.</p>
+            <p class="valor">R$ 150,00</p>
+            <a href="#pix-section" class="btn-presentear">Presentear</a>
+        </div>
+
+        <div class="card shadow card-presente">
+            <div class="categoria-tag">Lua de Mel</div>
+            <h3>Passeio de Barco</h3>
+            <p class="descricao">Um dia de aventura explorando as águas da região.</p>
+            <p class="valor">R$ 250,00</p>
+            <a href="#pix-section" class="btn-presentear">Presentear</a>
+        </div>
+
+        <div class="card shadow card-presente">
+            <div class="categoria-tag">Casa Nova</div>
+            <h3>Jogo de Panelas</h3>
+            <p class="descricao">Para as primeiras receitas que faremos juntos.</p>
+            <p class="valor">R$ 400,00</p>
+            <a href="#pix-section" class="btn-presentear">Presentear</a>
+        </div>
+
+        <div class="card shadow card-presente">
+            <div class="categoria-tag">Casa Nova</div>
+            <h3>Enxoval de Luxo</h3>
+            <p class="descricao">Roupas de cama e banho para o nosso novo cantinho.</p>
+            <p class="valor">R$ 600,00</p>
+            <a href="#pix-section" class="btn-presentear">Presentear</a>
+        </div>
+
+        <div class="card shadow card-presente">
+            <div class="categoria-tag">Especial</div>
+            <h3>Cota Eletrodomésticos</h3>
+            <p class="descricao">Uma ajuda para montarmos nossa cozinha completa.</p>
+            <p class="valor">R$ 1.000,00</p>
+            <a href="#pix-section" class="btn-presentear">Presentear</a>
+        </div>
+
+        <div class="card shadow card-presente">
+            <div class="categoria-tag">Especial</div>
+            <h3>Cota Livre</h3>
+            <p class="descricao">Fique à vontade para nos presentear com qualquer valor.</p>
+            <p class="valor">Valor Simbólico</p>
+            <a href="#pix-section" class="btn-presentear">Presentear</a>
+        </div>
+    </div>
+</section>
+
+    <section id="pix-section" class="secao-pix reveal">
+    <div class="pix-container-premium">
+        <div class="seguranca-selo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Ambiente Seguro</span>
+        </div>
+
+        <h2 class="titulo-pix">Presente via PIX</h2>
+        <p class="subtitulo-pix">Sua contribuição será recebida com muito amor.</p>
+
+        <div class="qr-wrapper shadow">
+            <div class="canto c1"></div><div class="canto c2"></div>
+            <div class="canto c3"></div><div class="canto c4"></div>
+            <img src="meu-pix.png" alt="QR Code PIX">
+        </div>
+
+        <div class="pix-copy-box">
+            <p class="label-chave">Chave PIX (E-mail ou CPF)</p>
+            <div class="chave-input-group">
+                <span id="pix-key">laediof@gmail.com</span> 
+                <button id="copy-btn">Copiar</button>
+            </div>
+            <p id="copy-status">Chave copiada! Agora é só colar no seu banco. ✨</p>
+        </div>
+        
+        <p class="favorecido">Favorecido: <strong>Francisco Laedio</strong></p>
+    </div>
+</section>
+</main>
+
+<footer class="final">
+    <p class="assinatura-final">Júlia & João</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

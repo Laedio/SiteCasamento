@@ -1,0 +1,549 @@
+:root {
+    --azul-marinho: #0a2a4a;
+    --dourado: #c5a059;
+    --fundo-leve: #f8f9fa;
+    --texto: #333;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Montserrat', sans-serif; background: var(--fundo-leve); color: var(--texto); line-height: 1.6; }
+
+/* --- HEADER COMO CONVITE OTIMIZADO --- */
+.convite-premium {
+    background: var(--azul-marinho);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Respiro para não colar na borda do celular */
+    color: white;
+    text-align: center;
+}
+.convite-premium {
+    /* ... outras propriedades ... */
+    background-color: var(--azul-marinho); /* Mantenha a cor base */
+    /* Adiciona uma textura de linho sutil sobre o azul */
+    background-image: url('https://www.transparenttextures.com/patterns/linen.png'); 
+    background-blend-mode: multiply; /* Mistura a textura com a cor de fundo */
+    /* ... outras propriedades ... */
+}
+
+.moldura-externa {
+    border: 2px solid var(--dourado); /* Borda Dourada Elegante */
+    padding: clamp(5px, 2vw, 15px);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    /* Cria profundidade ao redor de todo o convite */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5); 
+    background: rgba(255, 255, 255, 0.01); /* Fundo quase transparente para as molduras */
+    border-radius: 4px; /* Cantos levemente arredondados para suavizar */
+}
+
+.moldura-interna {
+    border: 1px solid var(--dourado);
+    /* Adiciona uma sombra interna sutil para efeito de relevo */
+    box-shadow: inset 0 0 15px rgba(197, 160, 89, 0.2); 
+    padding: clamp(30px, 8vw, 60px) 20px;
+    background: rgba(10, 42, 74, 0.8); /* Camada azul marinho interna ligeiramente translúcida */
+    border-radius: 2px;
+}
+
+/* Ajuste de Fontes para Celular vs PC */
+.monograma-topo span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 12vw, 4.5rem); /* Diminui no celular, cresce no PC */
+    color: var(--dourado);
+}
+
+.nomes-principais {
+    font-family: 'Great Vibes', cursive;
+    /* O clamp garante que o nome nunca fique grande demais no celular (quebrando linha) */
+    font-size: clamp(2.8rem, 8vw, 4.5rem); 
+    line-height: 1.1;
+    margin: 20px 0;
+    color: white;
+}
+
+.dados-evento p {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    margin-bottom: 8px;
+}
+
+/* Ajuste específico para telas muito pequenas (iPhone SE, etc) */
+@media (max-width: 380px) {
+    .moldura-interna {
+        padding: 20px 10px;
+    }
+    .nomes-principais {
+        font-size: 2.5rem;
+    }
+}
+
+.moldura-externa {
+    border: 2px solid var(--dourado);
+    padding: 10px;
+    width: 100%;
+    max-width: 650px;
+}
+
+.moldura-interna {
+    border: 1px solid var(--dourado);
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.monograma-topo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.monograma-topo span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    color: var(--dourado);
+}
+
+.linha-nobre { width: 1px; height: 60px; background: var(--dourado); }
+
+.introducao { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; }
+
+.nomes-principais {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(3rem, 10vw, 5rem);
+    line-height: 1.2;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.chamada { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 30px; font-style: italic; }
+
+.divisor-dourado { width: 80px; height: 1px; background: var(--dourado); margin: 0 auto 30px; }
+
+.dados-evento p { font-size: 1.2rem; margin-bottom: 8px; }
+.data-extenso { font-weight: 600; color: var(--dourado); }
+
+/* --- SEÇÕES --- */
+.container { padding: 80px 20px; max-width: 900px; margin: 0 auto; text-align: center; }
+.card-interativo { background: white; padding: 40px; border-radius: 15px; }
+.shadow { box-shadow: 0 15px 40px rgba(0,0,0,0.05); }
+
+.titulo-serif { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--azul-marinho); margin-bottom: 20px; }
+
+/* Botões e Inputs */
+input, select { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; }
+.btn-nobre { 
+    background: var(--azul-marinho); color: white; border: none; 
+    padding: 18px; width: 100%; border-radius: 8px; font-weight: bold; 
+    text-transform: uppercase; cursor: pointer; transition: 0.3s;
+}
+.btn-nobre:hover { background: #061b30; }
+
+/* PIX */
+.secao-pix { background: var(--azul-marinho); padding: 100px 20px; text-align: center; }
+.card-pix-premium { max-width: 450px; margin: 0 auto; }
+.qrcode-container { background: white; padding: 15px; display: inline-block; border-radius: 12px; margin: 25px 0; }
+.qrcode-container img { width: 180px; }
+#copy-btn { 
+    background: white; color: var(--azul-marinho); border: none; 
+    padding: 12px 30px; border-radius: 50px; font-weight: bold; cursor: pointer; 
+}
+#copy-status { color: #4cd137; font-size: 0.8rem; margin-top: 10px; opacity: 0; transition: 0.3s; }
+#copy-status.show { opacity: 1; }
+
+/* Animação */
+.reveal { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+.assinatura-final { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--azul-marinho); padding: 40px; }
+
+/* EFEITO DE ENTRADA SUAVE */
+@keyframes fadeInConvite {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.moldura-externa {
+    animation: fadeInConvite 2.5s ease-out; /* O convite surge em 2.5 segundos */
+}
+@media (max-width: 480px) {
+    .convite-premium {
+        padding: 10px;
+    }
+    .moldura-interna {
+        padding: 40px 15px; /* Menos espaço nas laterais no celular */
+    }
+    .nomes-principais {
+        font-size: 2.8rem; /* Ajuste fino para o nome não cortar */
+    }
+    .monograma-topo span {
+        font-size: 3.5rem;
+    }
+}
+/* Efeito de Brilho Metálico Dourado - VERSÃO BLINDADA */
+@keyframes glintDourado {
+    0% { background-position: -400px; }
+    100% { background-position: 400px; }
+}
+
+.nomes-principais {
+    /* Efeito de brilho (mantido) */
+    background: linear-gradient(135deg, #c5a059 25%, #fff 50%, #c5a059 75%);
+    background-size: 400px auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glintDourado 5s infinite linear;
+
+    /* RESOLUÇÃO DE CENTRALIZAÇÃO E CORTE */
+    display: block;        /* Ocupa a largura total para centralizar o texto dentro */
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;       /* Respiro apenas em cima e embaixo */
+    margin: 0 auto;        /* Centraliza o bloco */
+    line-height: 1.4;      /* Altura para as letras J e G */
+    overflow: visible;     /* Não corta as pontas */
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.3));
+    
+    /* Garante que a fonte seja a correta */
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2.8rem, 8vw, 4.5rem);
+}
+
+/* Ajuste específico para o Monograma */
+.monograma-topo span {
+    padding: 10px 20px;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.4));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(135deg, #c5a059 0%, #fff 50%, #c5a059 100%);
+    display: inline-block;
+}
+/* --- LISTA DE PRESENTES PROFISSIONAL (INTERATIVA) --- */
+.grid-presentes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    padding: 20px 10px;
+}
+
+.card-presente {
+    position: relative;
+    background: #ffffff;
+    padding: 50px 25px 30px !important;
+    border-radius: 20px;
+    border: 1px solid rgba(197, 160, 89, 0.1);
+    
+    /* Sombra Profissional: Suave e profunda */
+    box-shadow: 0 10px 30px rgba(10, 42, 74, 0.05); 
+    
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Interatividade ao passar o mouse */
+.card-presente:hover {
+    transform: translateY(-12px); /* Eleva o card */
+    box-shadow: 0 20px 40px rgba(10, 42, 74, 0.12); /* Sombra cresce */
+    border: 1px solid var(--dourado); /* Borda ganha cor */
+}
+
+.categoria-tag {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--azul-marinho);
+    color: var(--dourado);
+    padding: 6px 25px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.valor {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    color: var(--azul-marinho);
+    font-size: 1.6rem;
+    margin: 15px 0;
+    display: block;
+}
+
+/* Botão Interativo dentro do Card */
+.btn-presentear {
+    text-decoration: none;
+    background: #fdfaf3; /* Fundo creme bem suave */
+    border: 1px solid var(--dourado);
+    color: var(--azul-marinho);
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+    letter-spacing: 1px;
+}
+
+.btn-presentear:hover {
+    background: var(--dourado);
+    color: white;
+    box-shadow: 0 5px 15px rgba(197, 160, 89, 0.4);
+}
+/* Efeito Cascata nos Cards */
+.grid-presentes .card-presente:nth-child(1) { transition-delay: 0.1s; }
+.grid-presentes .card-presente:nth-child(2) { transition-delay: 0.2s; }
+.grid-presentes .card-presente:nth-child(3) { transition-delay: 0.3s; }
+.grid-presentes .card-presente:nth-child(4) { transition-delay: 0.4s; }
+.grid-presentes .card-presente:nth-child(5) { transition-delay: 0.5s; }
+.grid-presentes .card-presente:nth-child(6) { transition-delay: 0.6s; }
+/* --- SEÇÃO PIX PREMIUM --- */
+.secao-pix {
+    background: var(--azul-marinho);
+    background-image: url('https://www.transparenttextures.com/patterns/linen.png');
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.pix-container-premium {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px); /* Efeito Vidro Fosco */
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    border-radius: 30px;
+    padding: 50px 30px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+.seguranca-selo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--dourado);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.seguranca-selo svg { width: 14px; height: 14px; }
+
+.titulo-pix {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.subtitulo-pix { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 30px; }
+
+/* QR Code com Cantos Decorados */
+.qr-wrapper {
+    background: white;
+    padding: 20px;
+    display: inline-block;
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.qr-wrapper img { width: 200px; display: block; }
+
+.canto {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--dourado);
+}
+.c1 { top: -5px; left: -5px; border-right: 0; border-bottom: 0; }
+.c2 { top: -5px; right: -5px; border-left: 0; border-bottom: 0; }
+.c3 { bottom: -5px; left: -5px; border-right: 0; border-top: 0; }
+.c4 { bottom: -5px; right: -5px; border-left: 0; border-top: 0; }
+
+/* Input de Cópia */
+.pix-copy-box { margin-bottom: 20px; }
+
+.label-chave { color: var(--dourado); font-size: 0.75rem; font-weight: bold; margin-bottom: 10px; text-transform: uppercase; }
+
+.chave-input-group {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px 5px 20px;
+}
+
+#pix-key { color: white; font-family: monospace; font-size: 1rem; }
+
+#copy-btn {
+    background: var(--dourado);
+    color: var(--azul-marinho);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+#copy-btn:hover { background: white; transform: scale(1.05); }
+#copy-btn svg { width: 20px; height: 20px; }
+
+#copy-status {
+    color: #4cd137;
+    font-size: 0.85rem;
+    margin-top: 15px;
+    opacity: 0;
+    transition: 0.4s;
+    height: 0;
+}
+#copy-status.show { opacity: 1; height: auto; }
+
+.favorecido { color: rgba(255,255,255,0.4); font-size: 0.8rem; margin-top: 20px; }
+/* --- ESTILO DO ENDEREÇO CLICÁVEL --- */
+.link-mapa {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.endereco {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: var(--azul-marinho);
+    margin: 15px 0;
+}
+
+.link-mapa svg {
+    color: var(--dourado);
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.clique-aviso {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--dourado);
+    font-weight: bold;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
+
+/* Interatividade */
+.link-mapa:hover {
+    transform: translateY(-5px);
+}
+
+.link-mapa:hover svg {
+    transform: scale(1.2);
+}
+
+.link-mapa:hover .clique-aviso {
+    border-bottom: 1px solid var(--dourado);
+}
+
+/* Ajuste para Celular */
+@media (max-width: 768px) {
+    .endereco {
+        font-size: 1.1rem;
+    }
+}
+/* --- ENDEREÇO MINIMALISTA E PROFISSIONAL --- */
+.endereco-discreto {
+    display: block;
+    margin-top: 15px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; /* Tamanho menor e mais elegante */
+    color: white; /* Cor padrão do texto do convite */
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-style: italic; /* Dá um ar de sofisticação */
+    opacity: 0.85;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Efeito de linha que surge ao passar o mouse (PC) */
+.endereco-discreto::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--dourado);
+    transition: width 0.4s ease;
+}
+
+.endereco-discreto:hover {
+    opacity: 1;
+    color: var(--dourado); /* Muda suavemente para dourado */
+}
+
+.endereco-discreto:hover::after {
+    width: 100%;
+}
+
+/* Ajuste para dispositivos móveis (Toque) */
+@media (max-width: 480px) {
+    .endereco-discreto {
+        font-size: 1rem;
+        padding: 10px 0; /* Aumenta a área de toque sem aumentar o texto */
+    }
+}
+
+#copy-btn {
+    background: var(--dourado);
+    color: var(--azul-marinho);
+    border: none;
+    padding: 0 20px;
+    height: 45px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    min-width: 100px; /* Garante que o botão não mude de tamanho ao trocar o texto */
+}
+
+#copy-btn:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
+}
+
+/* Estado quando clicado */
+#copy-btn.sucesso {
+    background: #4cd137;
+    color: white;
+}
