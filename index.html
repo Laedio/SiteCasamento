@@ -15,7 +15,7 @@
             <div class="monograma-topo">
                 <span>J</span>
                 <div class="linha-nobre"></div>
-                <span>J</span>
+                <span>L</span>
             </div>
             
             <p class="introducao">Com a bênção de Deus e de seus pais</p>
@@ -42,20 +42,35 @@
 
 <main>
     <section id="rsvp" class="container reveal">
-        <div class="card-interativo shadow">
-            <h2 class="titulo-serif">Confirmar Presença</h2>
-            <p>Sua confirmação é essencial para nós.</p>
-            <form id="rsvp-form">
-                <input type="text" id="name" placeholder="Nome Completo" required>
-                <select id="attendance" required>
-                    <option value="" disabled selected>Você comparecerá?</option>
-                    <option value="Sim">Sim, estarei presente!</option>
-                    <option value="Não">Infelizmente não poderei ir</option>
+    <div class="card-interativo shadow">
+        <h2 class="titulo-serif">Confirmar Presença</h2>
+        <p>Sua confirmação é essencial para nós.</p>
+        
+        <form id="rsvp-form-google">
+            <input type="text" name="nome" placeholder="Nome Completo" required>
+    
+            <select id="select-presenca" name="presenca" required>
+                <option value="" disabled selected>Você comparecerá?</option>
+                <option value="Sim">Sim, estarei presente!</option>
+                <option value="Não">Infelizmente não poderei ir</option>
+            </select>
+    
+            <div id="container-acompanhante" style="display:none; margin-top: 15px;">
+                <label style="display:block; margin-bottom: 5px; font-size: 0.9em; color: #c5a059;">Levará acompanhante?</label>
+                <select id="select-acompanhante" name="acompanhante">
+                    <option value="Não" selected>Não, vou sozinho(a)</option>
+                    <option value="Sim">Sim, levarei acompanhante</option>
                 </select>
-                <button type="submit" class="btn-nobre">Confirmar via WhatsApp</button>
-            </form>
+            </div>
+    
+            <button type="submit" id="submit-btn" class="btn-nobre" style="margin-top: 20px;">Confirmar Presença</button>
+        </form>
+        
+        <div id="mensagem-sucesso" style="display:none; color: #c5a059; margin-top: 15px; font-weight: bold;">
+            ✅ Confirmado com sucesso! Obrigado.
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="presentes" class="lista-presentes container reveal">
     <h2 class="titulo-serif">Sugestões de Presentes</h2>

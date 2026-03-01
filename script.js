@@ -120,3 +120,38 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyIV_ZGte_adFfKNlRAY4nV3P6Cms_1M7EmZS2QB_wQyrgBmHj0AJtwCMgmiHLN60e6xw/exec';
+const form = document.getElementById('rsvp-form-google');
+const selectPresenca = document.getElementById('select-presenca');
+const containerAcompanhante = document.getElementById('container-acompanhante');
+const selectAcompanhante = document.getElementById('select-acompanhante');
+
+// Lógica de exibir o campo apenas se confirmar presença
+selectPresenca.addEventListener('change', function() {
+    if (this.value === 'Sim') {
+        containerAcompanhante.style.display = 'block';
+    } else {
+        containerAcompanhante.style.display = 'none';
+        selectAcompanhante.value = 'Não'; // Se não vai, acompanhante é Não por padrão
+    }
+});
+
+// Envio para a planilha
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.innerText = "Enviando...";
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            btn.innerText = "✅ Confirmado com sucesso!";
+            document.getElementById('mensagem-sucesso').style.display = 'block';
+            form.reset();
+        })
+        .catch(error => {
+            console.error('Erro!', error.message);
+            btn.disabled = false;
+            btn.innerText = "Tentar novamente";
+        });
+});
