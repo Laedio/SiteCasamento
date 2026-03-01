@@ -90,3 +90,33 @@ if (btnPix && chavePix) {
         });
     });
 }
+function copiarPix(codigo, nomePresente) {
+    const codigoLimpo = codigo.trim();
+    
+    navigator.clipboard.writeText(codigoLimpo).then(() => {
+        // Preenche o nome do presente no modal
+        document.getElementById('nome-presente-modal').innerText = nomePresente;
+        
+        // Exibe o modal
+        const modal = document.getElementById('modal-pix');
+        modal.style.display = 'flex';
+        
+        // Vibração discreta para confirmação táctil (em celulares)
+        if (navigator.vibrate) navigator.vibrate(80);
+        
+    }).catch(err => {
+        alert("Ops! Erro ao copiar. Tente novamente.");
+    });
+}
+
+function fecharModal() {
+    document.getElementById('modal-pix').style.display = 'none';
+}
+
+// Fecha o modal se o usuário clicar fora da caixa branca
+window.onclick = function(event) {
+    const modal = document.getElementById('modal-pix');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
