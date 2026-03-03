@@ -155,3 +155,12 @@ form.addEventListener('submit', e => {
             btn.innerText = "Tentar novamente";
         });
 });
+const dataCasamento = new Date(2026, 4, 15, 16, 0).getTime(); // Ajuste a data aqui!
+setInterval(() => {
+    const agora = new Date().getTime();
+    const dif = dataCasamento - agora;
+    document.getElementById("days").innerText = Math.floor(dif / (1000*60*60*24)).toString().padStart(2,'0');
+    document.getElementById("hours").innerText = Math.floor((dif % (1000*60*60*24)) / (1000*60*60)).toString().padStart(2,'0');
+    document.getElementById("minutes").innerText = Math.floor((dif % (1000*60*60)) / (1000*60)).toString().padStart(2,'0');
+    document.getElementById("seconds").innerText = Math.floor((dif % (1000*60)) / 1000).toString().padStart(2,'0');
+}, 1000);
