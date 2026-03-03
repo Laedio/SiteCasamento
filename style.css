@@ -1238,3 +1238,97 @@ input, select {
     border-radius: 4px;
     font-family: 'Montserrat', sans-serif;
 }
+
+
+
+
+
+.footer-casamento {
+    padding: 40px 20px;
+    background-color: #f7f5f2; /* O mesmo off-white do fundo */
+    border-top: 1px solid #e0d5c1;
+    text-align: center;
+}
+
+.footer-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.developer-credit {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.developer-credit a {
+    color: #c6a85b; /* O dourado sutil do projeto */
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 5px;
+    transition: color 0.3s ease;
+}
+
+.developer-credit a:hover {
+    color: #7a846f; /* Muda para o verde oliva no hover */
+}
+
+.developer-credit i {
+    font-size: 0.75rem;
+    margin-left: 3px;
+}
+
+
+
+
+
+/* Central de Ajuda Intuitiva */
+.central-ajuda {
+    padding: 30px 20px;
+    background-color: #ffffff;
+    border-top: 1px solid #e0d5c1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ajuda-item {
+    text-align: center;
+}
+
+.ajuda-texto {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.btn-suporte-direto {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    color: #7a846f; /* Seu Verde Oliva */
+    border: 1px solid #7a846f;
+    padding: 12px 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-suporte-direto:hover {
+    background-color: #7a846f;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(122, 132, 111, 0.2);
+}
