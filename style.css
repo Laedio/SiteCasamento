@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&family=Great+Vibes&display=swap');
 html {
     font-size: 16px; /* Base padrão */
 }
@@ -1167,4 +1168,73 @@ img, video, canvas {
 .btn-whatsapp:hover {
     color: #a88746; /* Dourado um pouco mais escuro no hover */
     transform: translateY(-2px);
+}
+:root {
+    --bg-color: #f7f5f2;       /* Off-white quente */
+    --gold: #c6a85b;           /* Dourado suave */
+    --olive: #7a846f;          /* Verde oliva */
+    --text-dark: #2e2e2e;      /* Grafite elegante */
+    --text-light: #707070;     /* Cinza para textos secundários */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Títulos Sofisticados */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+section {
+    padding: 100px 20px; /* Espaçamento generoso para não parecer apertado */
+}
+/* Botão Principal com a nova cor Oliva */
+.btn-nobre {
+    background-color: var(--olive);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 2px; /* Quase quadrado para ser mais chic */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-nobre:hover {
+    background-color: #5f6856; /* Verde levemente mais escuro */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Detalhe em Dourado para divisórias ou links */
+.gold-text {
+    color: var(--gold);
+    font-weight: 600;
+}
+#rsvp-form {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Sombra muito suave */
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #eee;
+}
+
+input, select {
+    border: 1px solid #ddd;
+    padding: 12px;
+    background-color: #fafafa;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
 }
