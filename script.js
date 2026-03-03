@@ -155,12 +155,35 @@ form.addEventListener('submit', e => {
             btn.innerText = "Tentar novamente";
         });
 });
-const dataCasamento = new Date(2026, 4, 15, 16, 0).getTime(); // Ajuste a data aqui!
-setInterval(() => {
+
+// === CONFIGURAÇÃO FINAL DA DATA DO CASAMENTO ===
+// 28 de Março de 2026 às 17:30:00
+const dataCasamento = new Date(2026, 2, 28, 17, 30, 0).getTime();
+
+const contador = setInterval(function() {
     const agora = new Date().getTime();
-    const dif = dataCasamento - agora;
-    document.getElementById("days").innerText = Math.floor(dif / (1000*60*60*24)).toString().padStart(2,'0');
-    document.getElementById("hours").innerText = Math.floor((dif % (1000*60*60*24)) / (1000*60*60)).toString().padStart(2,'0');
-    document.getElementById("minutes").innerText = Math.floor((dif % (1000*60*60)) / (1000*60)).toString().padStart(2,'0');
-    document.getElementById("seconds").innerText = Math.floor((dif % (1000*60)) / 1000).toString().padStart(2,'0');
+    const diferenca = dataCasamento - agora;
+
+    // Se a data já passou, encerra o contador
+    if (diferenca < 0) {
+        clearInterval(contador);
+        if (document.getElementById("timer")) {
+            document.getElementById("timer").innerHTML = "<div class='chegou'>✨ O GRANDE DIA CHEGOU! ✨</div>";
+        }
+        return;
+    }
+
+    // Cálculos matemáticos precisos
+    const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+    // Atualiza o HTML garantindo que os IDs existam e formatando com zero à esquerda
+    if (document.getElementById("days")) {
+        document.getElementById("days").innerText = dias.toString().padStart(2, '0');
+        document.getElementById("hours").innerText = horas.toString().padStart(2, '0');
+        document.getElementById("minutes").innerText = minutos.toString().padStart(2, '0');
+        document.getElementById("seconds").innerText = segundos.toString().padStart(2, '0');
+    }
 }, 1000);
