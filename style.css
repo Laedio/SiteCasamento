@@ -1132,3 +1132,39 @@ img, video, canvas {
     .timer-item { min-width: 70px; }
     .timer-item .label { font-size: 0.75rem; }
 }
+/* Container de Suporte no Formulário */
+.whatsapp-suporte {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px dashed #e0d5c1; /* Linha sutil separando do form */
+    text-align: center;
+}
+
+.whatsapp-suporte p {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 8px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #c5a059; /* Dourado em vez de Verde */
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp i {
+    font-size: 1.2rem;
+}
+
+.btn-whatsapp:hover {
+    color: #a88746; /* Dourado um pouco mais escuro no hover */
+    transform: translateY(-2px);
+}
