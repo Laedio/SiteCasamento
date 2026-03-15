@@ -156,34 +156,29 @@ form.addEventListener('submit', e => {
         });
 });
 
-// === CONFIGURAÇÃO FINAL DA DATA DO CASAMENTO ===
-// 28 de Março de 2026 às 17:30:00
-const dataCasamento = new Date(2026, 2, 28, 17, 30, 0).getTime();
+// ATUALIZAÇÃO DA DATA ALVO
+// O formato é: "Ano-Mês-DiaT Hora:Minuto:Segundo"
+const dataCasamento = new Date("2026-04-25T17:30:00").getTime();
 
-const contador = setInterval(function() {
+const countdown = setInterval(() => {
     const agora = new Date().getTime();
     const diferenca = dataCasamento - agora;
 
-    // Se a data já passou, encerra o contador
-    if (diferenca < 0) {
-        clearInterval(contador);
-        if (document.getElementById("timer")) {
-            document.getElementById("timer").innerHTML = "<div class='chegou'>✨ O GRANDE DIA CHEGOU! ✨</div>";
-        }
-        return;
-    }
-
-    // Cálculos matemáticos precisos
+    // Cálculos de tempo
     const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
     const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
     const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
-    // Atualiza o HTML garantindo que os IDs existam e formatando com zero à esquerda
-    if (document.getElementById("days")) {
-        document.getElementById("days").innerText = dias.toString().padStart(2, '0');
-        document.getElementById("hours").innerText = horas.toString().padStart(2, '0');
-        document.getElementById("minutes").innerText = minutos.toString().padStart(2, '0');
-        document.getElementById("seconds").innerText = segundos.toString().padStart(2, '0');
+    // Inserindo no HTML (Certifique-se que os IDs batem com seu HTML)
+    document.getElementById("days").innerText = dias < 10 ? "0" + dias : dias;
+    document.getElementById("hours").innerText = horas < 10 ? "0" + horas : horas;
+    document.getElementById("minutes").innerText = minutos < 10 ? "0" + minutos : minutos;
+    document.getElementById("seconds").innerText = segundos < 10 ? "0" + segundos : segundos;
+
+    // Se a contagem terminar
+    if (diferenca < 0) {
+        clearInterval(countdown);
+        document.getElementById("timer").innerHTML = "<p class='celebracao'>É hoje!</p>";
     }
 }, 1000);
