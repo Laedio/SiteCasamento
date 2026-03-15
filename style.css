@@ -1455,3 +1455,52 @@ input, select {
         font-size: 2rem !important;
     }
 }
+
+/* === REFINAMENTO FINAL DE RESPONSIVIDADE (MODO CELULAR) === */
+
+@media (max-width: 600px) {
+    /* 1. Ajuste do Cartão Flutuante: Menos respiro interno para sobrar espaço para o texto */
+    #contagem-final .container {
+        padding: 40px 20px !important;
+        max-width: 92% !important;
+        border-radius: 10px; /* Cantos levemente mais arredondados no celular ficam mais modernos */
+    }
+
+    /* 2. O Versículo: Ajustamos o tamanho para não ocupar muitas linhas */
+    .versiculo-texto {
+        font-size: 1rem !important;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+
+    /* 3. O Cronômetro: Garantir que os 4 itens fiquem em uma linha só sem apertar */
+    #timer.timer-grid {
+        display: flex;
+        justify-content: space-around;
+        gap: 5px;
+    }
+
+    .timer-item {
+        flex: 1;
+        text-align: center;
+    }
+
+    .timer-item .number {
+        font-size: 1.5rem !important; /* Tamanho ideal para leitura rápida no celular */
+        display: block;
+    }
+
+    .timer-item .label {
+        font-size: 0.55rem !important;
+        letter-spacing: 1px !important;
+        opacity: 0.8;
+    }
+
+    /* 4. Toque de Acessibilidade: Aumentar o espaçamento dos botões de contato */
+    .suporte-discreto a, .btn-suporte-direto {
+        padding: 15px !important;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
