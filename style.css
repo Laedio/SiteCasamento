@@ -1334,30 +1334,55 @@ input, select {
 }
 
 
-/* ESTILO PAPELARIA FINA - ÚLTIMA REGRA DO ARQUIVO */
+/* === DESIGN PROFISSIONAL COM CAMADAS E SOMBRAS === */
 #contagem-final.luxury-divider {
-    background-image: none !important; /* Garante que nenhuma foto apareça */
-    background: #f7f5f2 !important;    /* Fundo Off-white quente */
+    /* 1. Definimos a imagem da borda e o fundo off-white */
+    background-image: url('folhagem_bordas.png') !important;
     background-color: #f7f5f2 !important;
-    
+
+    /* 2. Posicionamento e tamanho da moldura completa */
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% 100% !important;
+
+    /* 3. Acabamento da seção */
     border-top: 1px solid #e0d5c1;
     border-bottom: 1px solid #e0d5c1;
-    padding: 100px 0 !important;
-    display: block !important;
+    padding: 120px 0 !important;
     position: relative;
-    text-align: center;
+    overflow: hidden;
 }
 
-/* Ajuste das cores para o fundo claro */
+/* === A CAMADA DE TEXTO "FLUTUANTE" === */
+#contagem-final .container {
+    position: relative;
+    z-index: 2; /* Garante que o texto fique por cima de tudo */
+    
+    /* Criamos o efeito de "cartão de papel" */
+    background-color: #ffffff; /* Fundo branco puro para destacar */
+    padding: 50px;
+    border-radius: 20px; /* Cantos suavemente arredondados */
+    max-width: 80%; /* Não deixa o cartão ocupar a largura toda */
+    margin: 0 auto; /* Centraliza o cartão na tela */
+
+    /* O TOQUE DE MESTRE: A SOMBRA PROFISSIONAL */
+    /* box-shadow: deslocamento-x deslocamento-y desfoque espalhamento cor */
+    box-shadow: 0 15px 35px rgba(122, 132, 111, 0.15); /* Sombra suave usando o tom Verde Oliva */
+    
+    /* Adicionamos uma borda interna quase invisível para dar definição */
+    border: 1px solid rgba(224, 213, 193, 0.3);
+}
+
+/* Mantemos os ajustes de cores para garantir leitura */
 #contagem-final .versiculo-texto, 
 #contagem-final .versiculo-ref,
 #contagem-final .label {
     color: #7a846f !important; /* Verde Oliva */
-    text-shadow: none !important;
+    text-shadow: none !important; /* Sem sombras no texto para não poluir */
 }
 
 #contagem-final .number {
-    color: #c6a85b !important; /* Dourado */
+    color: #c6a85b !important; /* Dourado Nobre */
     font-family: 'Playfair Display', serif;
     text-shadow: none !important;
 }
