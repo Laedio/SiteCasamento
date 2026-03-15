@@ -1019,27 +1019,7 @@ img, video, canvas {
     box-sizing: border-box;
 }
 
-.luxury-divider {
-    padding: 120px 20px;
-    position: relative;
-    
-    /* 1. A FOTO DO CASAL */
-    background-image: url('foto_casal_jesus.jpg');
-    
-    /* 2. O SEGREDO PARA A FOTO FICAR MAIS DISTANTE */
-    /* Usamos 'contain' para ver a foto inteira ou um valor em % para controlar o zoom */
-    background-size: cover; 
-    background-position: center 20%; /* Ajusta a altura da foto no visor */
-    
-    /* 3. AUMENTANDO A ALTURA PARA ABRIR O ENQUADRAMENTO */
-    min-height: 650px; 
-    
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-}
+
 
 /* Se a foto ainda parecer muito perto, adicione este ajuste para telas grandes */
 @media (min-width: 1200px) {
@@ -1122,12 +1102,32 @@ img, video, canvas {
 
 /* --- AJUSTES PARA CELULAR (FUNDAMENTAL) --- */
 @media (max-width: 768px) {
-    .luxury-divider {
-        padding: 60px 15px;
-        min-height: 400px; /* Altura menor no celular */
-        /* No celular, às vezes 'center center' funciona melhor se a foto for vertical */
-        background-position: center top; 
-    }
+    /* ESTILO PAPELARIA FINA (SEM FOTO) PARA A CONTAGEM */
+.luxury-divider {
+    /* Removemos a foto e colocamos o Off-white quente */
+    background-image: none !important; 
+    background-color: #f7f5f2; 
+    
+    /* Adicionamos uma textura sutil e bordas elegantes */
+    border-top: 1px solid #e0d5c1;
+    border-bottom: 1px solid #e0d5c1;
+    
+    padding: 80px 0;
+    position: relative;
+    text-align: center;
+}
+
+/* Ajuste das cores dos textos para destacar no fundo claro */
+.luxury-divider .versiculo-texto, 
+.luxury-divider .versiculo-ref,
+.luxury-divider .label {
+    color: #7a846f !important; /* Verde Oliva para um toque chique */
+}
+
+.luxury-divider .number {
+    color: #c6a85b !important; /* Dourado para os números */
+    font-family: 'Playfair Display', serif;
+}
     .versiculo-texto { font-size: 1.8rem; }
     .timer-item .number { font-size: 2.5rem; }
     .timer-item { min-width: 70px; }
@@ -1331,4 +1331,33 @@ input, select {
     background-color: #7a846f;
     color: #fff;
     box-shadow: 0 4px 12px rgba(122, 132, 111, 0.2);
+}
+
+
+/* ESTILO PAPELARIA FINA - ÚLTIMA REGRA DO ARQUIVO */
+#contagem-final.luxury-divider {
+    background-image: none !important; /* Garante que nenhuma foto apareça */
+    background: #f7f5f2 !important;    /* Fundo Off-white quente */
+    background-color: #f7f5f2 !important;
+    
+    border-top: 1px solid #e0d5c1;
+    border-bottom: 1px solid #e0d5c1;
+    padding: 100px 0 !important;
+    display: block !important;
+    position: relative;
+    text-align: center;
+}
+
+/* Ajuste das cores para o fundo claro */
+#contagem-final .versiculo-texto, 
+#contagem-final .versiculo-ref,
+#contagem-final .label {
+    color: #7a846f !important; /* Verde Oliva */
+    text-shadow: none !important;
+}
+
+#contagem-final .number {
+    color: #c6a85b !important; /* Dourado */
+    font-family: 'Playfair Display', serif;
+    text-shadow: none !important;
 }
