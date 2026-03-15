@@ -1084,12 +1084,17 @@ img, video, canvas {
     min-width: 100px;
 }
 
-.timer-item .number {
-    font-family: 'Cinzel', serif;
-    font-size: 4rem;
-    color: #c5a059 !important; /* Dourado Nobre */
-    font-weight: 400;
-    line-height: 1;
+#contagem-final .number {
+    color: #c6a85b !important;
+    font-family: 'Cormorant Garamond', serif; /* Ou a fonte que você estiver usando */
+    font-size: 3rem !important;
+    font-weight: 600;
+
+    /* O SEGREDO PARA ALINHAR OS NÚMEROS: */
+    font-variant-numeric: tabular-nums lining-nums;
+    display: inline-block;
+    min-width: 1.2em; /* Garante que o 1 ocupe o mesmo espaço que o 8, evitando que o layout trema */
+    text-align: center;
 }
 
 .timer-item .label {
