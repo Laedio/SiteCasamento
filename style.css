@@ -1399,3 +1399,59 @@ input, select {
     font-weight: 300; /* Números mais finos são mais elegantes */
     color: #c6a85b !important;
 }
+
+/* === OTIMIZAÇÃO PARA DISPOSITIVOS MÓVEIS === */
+
+@media (max-width: 768px) {
+    /* Ajusta o espaçamento da seção de contagem */
+    #contagem-final.luxury-divider {
+        padding: 60px 15px !important;
+        /* No celular, a moldura de borda pode ficar muito esticada, 
+           então mudamos para 'cover' para manter a proporção */
+        background-size: cover !important; 
+    }
+
+    /* O cartão flutuante ocupa mais largura no celular */
+    #contagem-final .container {
+        max-width: 95% !important;
+        padding: 30px 15px !important;
+    }
+
+    /* Diminui os nomes principais para não quebrar linha feio */
+    .nomes-principais {
+        font-size: 2.5rem !important;
+    }
+
+    /* Ajusta o Timer para caber lado a lado no celular */
+    .timer-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas iguais */
+        gap: 10px;
+    }
+
+    .timer-item .number {
+        font-size: 1.8rem !important;
+    }
+
+    .timer-item .label {
+        font-size: 0.6rem !important;
+        letter-spacing: 2px;
+    }
+
+    /* Ajusta os botões de Pix para não ficarem gigantes */
+    .btn-presentear {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Ajuste fino para celulares muito pequenos (iPhone SE, etc) */
+@media (max-width: 380px) {
+    .timer-grid {
+        gap: 5px;
+    }
+    
+    .nomes-principais {
+        font-size: 2rem !important;
+    }
+}
