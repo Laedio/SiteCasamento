@@ -1509,3 +1509,71 @@ input, select {
         box-sizing: border-box;
     }
 }
+
+/* === OTIMIZAÇÃO VISUAL DEFINITIVA PARA MOBILE === */
+@media (max-width: 600px) {
+    
+    /* 1. Ajuste de Seção: Menos altura, mais foco no conteúdo */
+    #contagem-final.luxury-divider {
+        padding: 80px 0 !important;
+        /* Garantimos que a moldura de borda não "esmague" o texto */
+        background-size: 110% 110% !important; 
+    }
+
+    /* 2. O Cartão "Papelaria": Ajuste de largura para iPhones Mini e telas pequenas */
+    #contagem-final .container {
+        width: 88% !important;
+        padding: 45px 20px !important;
+        /* Sombra mais curta e suave (sombras longas pesam visualmente no celular) */
+        box-shadow: 0 8px 25px rgba(122, 132, 111, 0.12);
+        border-radius: 8px; /* Cantos mais sutis evocam papel cortado à mão */
+    }
+
+    /* 3. Tipografia Nobre: Ajuste de escala para evitar quebra de palavras */
+    .versiculo-texto {
+        font-size: 0.95rem !important;
+        letter-spacing: 0.5px;
+        line-height: 1.5;
+        margin-bottom: 8px;
+        padding: 0 10px;
+    }
+
+    .versiculo-ref {
+        font-size: 0.75rem !important;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    /* 4. O Timer: Otimização de "Área de Respiro" */
+    .timer-grid {
+        margin-top: 30px;
+        display: flex !important;
+        justify-content: space-between !important;
+    }
+
+    .timer-item {
+        flex: 1;
+    }
+
+    /* Números com altura fixa para evitar que o layout "pule" */
+    .timer-item .number {
+        font-size: 1.6rem !important;
+        font-weight: 500 !important;
+        line-height: 1;
+        margin-bottom: 5px;
+    }
+
+    /* Labels menores e mais espaçadas (Visual Premium) */
+    .timer-item .label {
+        font-size: 0.5rem !important;
+        letter-spacing: 1.5px !important;
+        opacity: 0.7;
+    }
+
+    /* 5. Ajuste de Botões (Acessibilidade de Polegar) */
+    .btn-nobre, .btn-presentear {
+        height: 50px; /* Altura padrão para facilitar o toque */
+        font-size: 0.85rem !important;
+        letter-spacing: 1px;
+    }
+}
