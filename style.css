@@ -1334,55 +1334,68 @@ input, select {
 }
 
 
-/* === DESIGN PROFISSIONAL COM CAMADAS E SOMBRAS === */
+/* === VERSÃO ULTRAPROFISSIONAL: GLASSMORPHISM & ANIMAÇÃO === */
+
 #contagem-final.luxury-divider {
-    /* 1. Definimos a imagem da borda e o fundo off-white */
     background-image: url('folhagem_bordas.png') !important;
     background-color: #f7f5f2 !important;
-
-    /* 2. Posicionamento e tamanho da moldura completa */
     background-position: center center !important;
     background-repeat: no-repeat !important;
     background-size: 100% 100% !important;
-
-    /* 3. Acabamento da seção */
-    border-top: 1px solid #e0d5c1;
-    border-bottom: 1px solid #e0d5c1;
-    padding: 120px 0 !important;
+    padding: 140px 0 !important; /* Aumentamos o respiro */
     position: relative;
     overflow: hidden;
 }
 
-/* === A CAMADA DE TEXTO "FLUTUANTE" === */
 #contagem-final .container {
     position: relative;
-    z-index: 2; /* Garante que o texto fique por cima de tudo */
+    z-index: 2;
     
-    /* Criamos o efeito de "cartão de papel" */
-    background-color: #ffffff; /* Fundo branco puro para destacar */
-    padding: 50px;
-    border-radius: 20px; /* Cantos suavemente arredondados */
-    max-width: 80%; /* Não deixa o cartão ocupar a largura toda */
-    margin: 0 auto; /* Centraliza o cartão na tela */
+    /* EFEITO PAPEL VEGETAL (GLASS) */
+    background: rgba(255, 255, 255, 0.85); /* Branco levemente transparente */
+    backdrop-filter: blur(8px); /* Desfoca suavemente o que está atrás */
+    -webkit-backdrop-filter: blur(8px); /* Suporte para Safari */
+    
+    padding: 60px 40px;
+    border-radius: 2px; /* Cantos retos ou quase retos dão um ar mais editorial/clássico */
+    max-width: 750px;
+    margin: 0 auto;
 
-    /* O TOQUE DE MESTRE: A SOMBRA PROFISSIONAL */
-    /* box-shadow: deslocamento-x deslocamento-y desfoque espalhamento cor */
-    box-shadow: 0 15px 35px rgba(122, 132, 111, 0.15); /* Sombra suave usando o tom Verde Oliva */
+    /* SOMBRA MULTICAMADAS (Mais profunda e realista) */
+    box-shadow: 
+        0 10px 30px rgba(122, 132, 111, 0.1),
+        0 1px 8px rgba(0, 0, 0, 0.05);
+
+    border: 1px solid rgba(200, 180, 150, 0.3);
     
-    /* Adicionamos uma borda interna quase invisível para dar definição */
-    border: 1px solid rgba(224, 213, 193, 0.3);
+    /* ANIMAÇÃO DE SUBIDA */
+    animation: subirSuave 1.5s ease-out;
 }
 
-/* Mantemos os ajustes de cores para garantir leitura */
-#contagem-final .versiculo-texto, 
-#contagem-final .versiculo-ref,
+/* Definição da Animação */
+@keyframes subirSuave {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* AJUSTE NOBRE NOS RÓTULOS DO TIMER */
 #contagem-final .label {
-    color: #7a846f !important; /* Verde Oliva */
-    text-shadow: none !important; /* Sem sombras no texto para não poluir */
+    text-transform: uppercase;
+    letter-spacing: 4px; /* Espaçamento entre letras */
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #7a846f !important;
 }
 
 #contagem-final .number {
-    color: #c6a85b !important; /* Dourado Nobre */
-    font-family: 'Playfair Display', serif;
-    text-shadow: none !important;
+    font-size: 3rem;
+    font-weight: 300; /* Números mais finos são mais elegantes */
+    color: #c6a85b !important;
 }
